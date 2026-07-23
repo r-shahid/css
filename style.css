@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wdth,wght@6..144,25..151,1..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
     --yellow: #FFD166;
@@ -28,47 +28,129 @@ body {
 
 .card {
     background-color: white;
-    /* height: 200px; */
-    /* width: 300px; */
-    /* width: 100%; */
-    /* height: 100%; */
-    /* padding: 24px 32px; */
+    border: 2px solid black;
     aspect-ratio: 40/32;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 2rem;
+    /* font-size: calc(2rem); */
 }
 
 .card1{
     font-family: "Rubik", sans-serif;
-    font-size: 6rem;
     font-weight: 800;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: var(--yellow);
     color: var(--navy);
-    text-shadow: var(--hot-pink) 2px 3px,
-                var(--blue) 4px 6px;
+    text-shadow: var(--hot-pink) 3px 3px,
+                var(--blue) 6px 6px;
+    padding: 20px;
+    animation: shadow 2s linear;
 }
 .card1:hover{
     text-shadow: none;
-    animation: shadow 2s infinite;
+    animation: shadow 2s linear infinite;
 }
 @keyframes shadow {
     0%, 100% {
-        text-shadow: 5px 5px 0 var(--hot-pink), 10px 10px 0 var(--blue);
+        text-shadow: 3px 3px 0 var(--hot-pink), 6px 6px 0 var(--blue);
     }
     25%{
-        text-shadow: -5px 5px 0 var(--hot-pink), -10px 10px 0 var(--blue);
+        text-shadow: -3px 3px 0 var(--hot-pink), -6px 6px 0 var(--blue);
+    }
+    50% {
+        text-shadow: -3px -3px 0 var(--hot-pink), -6px -6px 0 var(--blue);
+    }
+    75%{
+        text-shadow: 3px -3px 0 var(--hot-pink), 6px -6px 0 var(--blue);
+    }
+}
+
+.card2{
+    background-color: #d9ed92;
+}
+.card2 p{
+    font-family: "Google Sans Flex", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    text-transform: lowercase;
+    font-variation-settings: 
+        "slnt" 0,
+        "wdth" 120,
+        "GRAD" 0,
+        "ROND" 0;
+    animation: popout 2s ease-in;
+    color: white;
+}
+.card2:hover p{
+    animation: popout 1.2s ease-in infinite;
+}
+
+@keyframes popout {
+    0%, 100%{
+        text-shadow: none;
+    }
+    10%{
+        transform: translate(-2px, -2px);
+        text-shadow: 2px 2px 0 #76c893;
+    }
+    20%{
+        transform: translate(-4px, -4px);
+        text-shadow: 2px 2px 0 #76c893, 
+                    4px 4px 0 #52b69a;
+    }
+    30%{
+        transform: translate(-6px, -6px);
+        text-shadow: 2px 2px 0 #76c893, 
+                    4px 4px 0 #52b69a,
+                    6px 6px 0 #34a0a4;
+    }
+    40%{
+        transform: translate(-8px, -8px);
+        text-shadow: 2px 2px 0 #76c893, 
+                    4px 4px 0 #52b69a,
+                    6px 6px 0 #34a0a4,
+                    8px 8px 0 #168aad;
+    }
+
+}
+
+@media (width >= 650px){
+    .card{
+        font-size: 4rem;
+    }
+}
+@media (width >= 1000px){
+    .card{
+        font-size: 6rem;
+    }
+    @keyframes shadow {
+        /* make the shadows longer on a bigger screen */
+    0%, 100% {
+        text-shadow: 5px 5px 0 var(--hot-pink), 10px 10px 0 var(--blue);
+    }
+    12.5% {
+        text-shadow: 0px 5px 0 var(--hot-pink), 0px 10px 0 var(--blue);
+    }
+    25%{
+        text-shadow: -5px 5px 0 var(--hot-pink), -8px 10px 0 var(--blue);
+    }
+    37.5%{
+        text-shadow: -5px 0px 0 var(--hot-pink), -10px 0px 0 var(--blue);
     }
     50% {
         text-shadow: -5px -5px 0 var(--hot-pink), -10px -10px 0 var(--blue);
     }
+    62.5%{
+        text-shadow: 0px -5px 0 var(--hot-pink), 0px -10px 0 var(--blue);
+    }
     75%{
         text-shadow: 5px -5px 0 var(--hot-pink), 10px -10px 0 var(--blue);
     }
-}
-@media (width >= 1000px){
-    .all-effects {
-        /* grid-template-columns: 1fr 1fr 1fr; */
+    87.5%{
+        text-shadow: 5px 0px 0 var(--hot-pink), 10px 0px 0 var(--blue);
     }
+}
 }

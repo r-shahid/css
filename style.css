@@ -1,228 +1,450 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wdth,wght@6..144,25..151,1..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wdth,wght@6..144,25..151,1..1000&family=Lexend+Giga:wght@100..900&family=Orbitron:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 :root {
-    --yellow: #FFD166;
-    --navy: #083B4C;
-    --hot-pink: #EE446F;
-    --blue: #168AB2;
-    --base: #fbf5eb;
-    --text: #03043d; 
+  --yellow: #ffd700;
+  --green: #33cd32;
+  --blue: #01bfff;
+  --purple: #ba55d3;
+  --orange: #ff8c02;
+  --pink: #ff69b4;
+  --salmon: #f98072;
+  --teal: #00ced1;
+
+  --navy: #083b4c;
+  --hot-pink: #ee446f;
+  --base: #fbf5eb;
+  --breathe: "Lexend Giga", sans-serif;
 }
 
 body {
-    background-color: var(--base);
-    font-family: "Google Sans Flex", sans-serif;
-    height: 100%;
-    min-height: 100vh;
+  background-color: var(--base);
+  font-family: "Google Sans Flex", sans-serif;
+  height: 100%;
+  min-height: 100vh;
 }
 
 .header {
-    /* background-color: aliceblue; */
-    height: 150px;
-    margin: 0px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  /* background-color: aliceblue; */
+  height: 150px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.header .title{
-    font-size: 2rem;
-    font-weight: 800;
-    font-variation-settings: "wdth" 151;
-    color: var(--text);
+.header .title {
+  font-size: 2rem;
+  font-weight: 800;
+  font-variation-settings: "wdth" 151;
+  color: var(--text);
 }
 .header div:not(.title) {
-    text-align: right;
-    padding: 20px;
+  text-align: right;
+  padding: 20px;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+.header button {
+    /* padding: 8px; */
+    font-size: inherit;
     font-style: italic;
-    font-size: 1.2rem;
+    font-family: inherit;
+    background-color: var(--base);
+    cursor: pointer;
+    border: 2px solid;
+    box-shadow: 
+        1px 1px 0px 0px,
+        2px 2px 0px 0px,
+        3px 3px 0px 0px;
+    position: relative;
+}
+.header button:active{
+    box-shadow: 0px 0px 0px 0px;
+    top: 3px;
+    left: 3px;
 }
 
-.all-effects{
-    width: 95%;
-    margin: auto;
-    background-color: pink;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    
+.all-effects {
+  width: 95%;
+  margin: auto;
+  background-color: pink;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .card {
-    background-color: white;
-    /* border: 2px solid black; */
-    aspect-ratio: 40/32;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    font-size: 2rem;
-    /* font-size: calc(2rem); */
+  background-color: white;
+  /* border: 2px solid black; */
+  aspect-ratio: 40/32;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 2rem;
+  /* font-size: calc(2rem); */
 }
 
-.card1{
-    font-family: "Rubik", sans-serif;
-    font-weight: 800;
-    text-align: center;
-    background-color: var(--yellow);
-    color: var(--navy);
-    text-shadow: var(--hot-pink) 3px 3px,
-                var(--blue) 6px 6px;
-    padding: 20px;
-    animation: shadow 1.5s linear;
+.card.fullwidth {
+  grid-column: 1 / span 2;
 }
-.card1:hover{
-    text-shadow: none;
-    animation: shadow 1.5s linear infinite;
+
+.card1 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 800;
+  text-align: center;
+  background-color: var(--yellow);
+  color: var(--orange);
+  text-shadow:
+    var(--teal) 3px 3px,
+    var(--pink) 6px 6px;
+  padding: 20px;
+  animation: shadow 1.5s linear;
+}
+.card1:hover, .card1.hover-off {
+  text-shadow: none;
+  animation: shadow 1.5s linear infinite;
 }
 @keyframes shadow {
-    0%, 100% {
-        text-shadow: 3px 3px 0 var(--hot-pink), 6px 6px 0 var(--blue);
-    }
-    25%{
-        text-shadow: -3px 3px 0 var(--hot-pink), -6px 6px 0 var(--blue);
-    }
-    50% {
-        text-shadow: -3px -3px 0 var(--hot-pink), -6px -6px 0 var(--blue);
-    }
-    75%{
-        text-shadow: 3px -3px 0 var(--hot-pink), 6px -6px 0 var(--blue);
-    }
+  0%,
+  100% {
+    text-shadow:
+      var(--teal) 3px 3px,
+      var(--pink) 6px 6px;
+  }
+  25% {
+    text-shadow:
+      -3px 3px 0 var(--teal),
+      -6px 6px 0 var(--pink);
+  }
+  50% {
+    text-shadow:
+      -3px -3px 0 var(--teal),
+      -6px -6px 0 var(--pink);
+  }
+  75% {
+    text-shadow:
+      3px -3px 0 var(--teal),
+      6px -6px 0 var(--pink);
+  }
 }
 
-.card2{
-    background-color: #d9ed92;
+.card2 {
+  background-color: var(--pink);
 }
-.card2 p{
-    font-family: "Google Sans Flex", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    text-transform: lowercase;
-    font-variation-settings: 
-        "slnt" 0,
-        "wdth" 120,
-        "GRAD" 0,
-        "ROND" 0;
-    animation: popout 1.5s steps(5);
-    color: white;
+.card2 p {
+  font-family: "Google Sans Flex", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  text-transform: lowercase;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 120,
+    "GRAD" 0,
+    "ROND" 0;
+  animation: popout 1.5s steps(5);
+  color: white;
 }
-.card2:hover p{
-    animation: popout 1.5s steps(5) infinite;
+.card2:hover p, .card2.hover-off p {
+  animation: popout 1.5s steps(5) infinite;
 }
 
 @keyframes popout {
-    0%, 100%{
-        text-shadow: none;
-    }
-    10%{
-        transform: translate(-2px, -2px);
-        text-shadow: 2px 2px 0 #76c893;
-    }
-    20%{
-        transform: translate(-4px, -4px);
-        text-shadow: 2px 2px 0 #76c893, 
-                    4px 4px 0 #52b69a;
-    }
-    30%{
-        transform: translate(-6px, -6px);
-        text-shadow: 2px 2px 0 #76c893, 
-                    4px 4px 0 #52b69a,
-                    6px 6px 0 #34a0a4;
-    }
-    40%, 50%{
-        transform: translate(-8px, -8px);
-        text-shadow: 2px 2px 0 #76c893, 
-                    4px 4px 0 #52b69a,
-                    6px 6px 0 #34a0a4,
-                    8px 8px 0 #168aad;
-    }
-    /* i don't see a difference when adding 60-90 since i have steps so im omitting those*/
+  0%,
+  100% {
+    text-shadow: none;
+  }
+  10% {
+    transform: translate(-2px, -2px);
+    text-shadow: 2px 2px 0 #76c893;
+  }
+  20% {
+    transform: translate(-4px, -4px);
+    text-shadow:
+      2px 2px 0 #76c893,
+      4px 4px 0 #52b69a;
+  }
+  30% {
+    transform: translate(-6px, -6px);
+    text-shadow:
+      2px 2px 0 #76c893,
+      4px 4px 0 #52b69a,
+      6px 6px 0 #34a0a4;
+  }
+  40%,
+  50% {
+    transform: translate(-8px, -8px);
+    text-shadow:
+      2px 2px 0 #76c893,
+      4px 4px 0 #52b69a,
+      6px 6px 0 #34a0a4,
+      8px 8px 0 #168aad;
+  }
+  /* i don't see a difference when adding 60-90 since i have steps so im omitting those*/
 }
 
 .card3 {
-    grid-column: 1/ span 3;
-    /* height: 500px; */
-    background: linear-gradient(130deg, #eee, #ccc);
-    font-weight: 800;
-    font-size: 4rem;
+  background-color: var(--teal);
+  font-weight: 800;
+  font-size: 4rem;
+}
+.card3 > div {
+  filter: drop-shadow(2px 2px 1px rgba(62, 110, 119, 0.1));
 }
 .card3 p {
-    display: block;
-    background: linear-gradient(25deg, rgba(207, 31, 204, 0.1), rgb(143, 143, 233, 0.6)),
+  display: block;
+  background:
+    linear-gradient(25deg, rgba(26, 255, 0, 0.237), rgba(251, 94, 94, 0.584)),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 400 310' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: tilt 3s alternate ease-in-out;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: tilt 2s alternate ease-in-out;
 }
-.card3:hover p {
-    animation: tilt 3s infinite alternate ease-in-out
+.card3:hover p, .card3.hover-off p {
+  animation: tilt 2s infinite alternate-reverse ease-in-out;
 }
 @keyframes tilt {
-    from {
-        transform: perspective(600px) rotate3d(1, 0, 0, 0deg);
-        filter: contrast(150%) brightness(170%);
-    }
-    to {
-        transform: perspective(600px) rotate3d(1, 1, -0.05, 12deg);
-        filter: contrast(150%) brightness(120%);
-    }
+  from {
+    transform: perspective(600px) rotate3d(1, 1, 0, 9deg);
+    filter: contrast(150%) brightness(170%);
+  }
+  to {
+    transform: perspective(600px) rotate3d(1, 1, -0.05, -10deg);
+    filter: contrast(150%) brightness(120%);
+  }
 }
 
-.card4{
-    
+.card4 {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  background-color: var(--green);
+}
+.card4 p {
+  display: block;
+  background: linear-gradient(
+    135deg,
+    #1a1a2e 0%,
+    #4a4a6a 20%,
+    #e8e8e8 40%,
+    #4a4a6a 60%,
+    #1a1a2e 80%,
+    #4a4a6a 100%
+  );
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: chrome 4s ease-in-out;
+}
+.card4:hover p, .card4.hover-off p {
+  animation: chrome 4s infinite ease-in-out;
 }
 
+@keyframes chrome {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+}
 
-footer{
-    text-align: center;
-    /* height: 48px; */
-    padding: 8px;
-    font-family: "Google Sans Flex", sans-serif;
-    font-weight: 600;
-    color: var(--text);
-    /* position: absolute;
+.card5 {
+  font-family: var(--breathe);
+  font-weight: 100;
+  letter-spacing: -5px;
+  background-color: var(--blue);
+  color: var(--base);
+}
+.card5 span:nth-child(1),
+.card5 span:nth-child(7) {
+  animation: breathe4 2s;
+}
+.card5 span:nth-child(2),
+.card5 span:nth-child(6) {
+  animation: breathe3 2s;
+}
+.card5 span:nth-child(3),
+.card5 span:nth-child(5) {
+  animation: breathe2 2s;
+}
+.card5 span:nth-child(4) {
+  animation: breathe 2s;
+}
+.card5:hover span:nth-child(1),
+.card5:hover span:nth-child(7),
+.card5.hover-off span:nth-child(1),
+.card5.hover-off span:nth-child(7) {
+  animation: breathe4 2s infinite ease-in-out;
+}
+.card5:hover span:nth-child(2),
+.card5:hover span:nth-child(6),
+.card5.hover-off span:nth-child(2),
+.card5.hover-off span:nth-child(6) {
+  animation: breathe3 2s infinite ease-in-out;
+}
+.card5:hover span:nth-child(3),
+.card5:hover span:nth-child(5),
+.card5.hover-off span:nth-child(3),
+.card5.hover-off span:nth-child(5) {
+  animation: breathe2 2s infinite ease-in-out;
+}
+.card5:hover span:nth-child(4), .card5.hover-off span:nth-child(4) {
+  animation: breathe 2s infinite ease-in-out;
+}
+@keyframes breathe {
+  0%,
+  100% {
+    font-weight: 100;
+  }
+  50% {
+    font-weight: 900;
+    font-size: 4rem;
+  }
+}
+@keyframes breathe2 {
+  0%,
+  100% {
+    font-weight: 100;
+  }
+  50% {
+    font-weight: 500;
+    font-size: 3rem;
+  }
+}
+@keyframes breathe3 {
+  0%,
+  100% {
+    font-weight: 100;
+  }
+  50% {
+    font-weight: 300;
+    font-size: 2.5rem;
+  }
+}
+@keyframes breathe4 {
+  0%,
+  100% {
+    font-weight: 100;
+  }
+  50% {
+    font-weight: 200;
+  }
+}
+
+.card6 {
+  font-size: 4rem;
+  background-color: var(--orange);
+}
+.card6 span:nth-child(1) {
+  animation: left 4s ease-in-out;
+}
+.card6:hover span:nth-child(1), 
+.card6.hover-off span:nth-child(1) {
+  animation: left 4s infinite ease-in-out;
+}
+@keyframes left {
+  0%,
+  100% {
+    font-variation-settings: "wdth" 151;
+    font-weight: 900;
+  }
+  50% {
+    font-variation-settings: "wdth" 50;
+    font-weight: 100;
+  }
+}
+.card6 span:nth-child(2) {
+  animation: right 4s ease-in-out;
+}
+.card6:hover span:nth-child(2), 
+.card6.hover-off span:nth-child(2) {
+  animation: right 4s infinite ease-in-out;
+}
+@keyframes right {
+  0%,
+  100% {
+    font-variation-settings: "wdth" 50;
+    font-weight: 100;
+  }
+  50% {
+    font-variation-settings: "wdth" 151;
+    font-weight: 900;
+  }
+}
+
+footer {
+  text-align: center;
+  /* height: 48px; */
+  padding: 8px;
+  font-size: calc(0.5rem + 0.5vw);
+  font-family: "Google Sans Flex", sans-serif;
+  font-weight: 600;
+  color: var(--text);
+  /* position: absolute;
     bottom: 0;
     width: 97%;
     margin: auto; */
 }
-footer a{
-    color: var(--text);
-    text-decoration: none;
+footer a {
+  color: var(--text);
+  text-decoration: none;
 }
 
-@media (width >= 650px){
-    .card{
-        font-size: 4rem;
-    }
+@media (width >= 650px) {
+  .card {
+    font-size: calc(2rem + 4vw);
+  }
+  .card.fullwidth {
+    font-size: calc(4rem + 6vw);
+  }
 }
-@media (width >= 1000px){
-    .card{
+@media (width >= 1000px) {
+  /* .card{
         font-size: 6rem;
-    }
-    @keyframes shadow {
-        /* making the shadows longer on a bigger screen */
-    0%, 100% {
-        text-shadow: 5px 5px 0 var(--hot-pink), 10px 10px 0 var(--blue);
+    } */
+  @keyframes shadow {
+    /* making the shadows longer on a bigger screen */
+    0%,
+    100% {
+      text-shadow:
+        5px 5px 0 var(--hot-pink),
+        10px 10px 0 var(--blue);
     }
     12.5% {
-        text-shadow: 0px 5px 0 var(--hot-pink), 0px 10px 0 var(--blue);
+      text-shadow:
+        0px 5px 0 var(--hot-pink),
+        0px 10px 0 var(--blue);
     }
-    25%{
-        text-shadow: -5px 5px 0 var(--hot-pink), -8px 10px 0 var(--blue);
+    25% {
+      text-shadow:
+        -5px 5px 0 var(--hot-pink),
+        -8px 10px 0 var(--blue);
     }
-    37.5%{
-        text-shadow: -5px 0px 0 var(--hot-pink), -10px 0px 0 var(--blue);
+    37.5% {
+      text-shadow:
+        -5px 0px 0 var(--hot-pink),
+        -10px 0px 0 var(--blue);
     }
     50% {
-        text-shadow: -5px -5px 0 var(--hot-pink), -10px -10px 0 var(--blue);
+      text-shadow:
+        -5px -5px 0 var(--hot-pink),
+        -10px -10px 0 var(--blue);
     }
-    62.5%{
-        text-shadow: 0px -5px 0 var(--hot-pink), 0px -10px 0 var(--blue);
+    62.5% {
+      text-shadow:
+        0px -5px 0 var(--hot-pink),
+        0px -10px 0 var(--blue);
     }
-    75%{
-        text-shadow: 5px -5px 0 var(--hot-pink), 10px -10px 0 var(--blue);
+    75% {
+      text-shadow:
+        5px -5px 0 var(--hot-pink),
+        10px -10px 0 var(--blue);
     }
-    87.5%{
-        text-shadow: 5px 0px 0 var(--hot-pink), 10px 0px 0 var(--blue);
+    87.5% {
+      text-shadow:
+        5px 0px 0 var(--hot-pink),
+        10px 0px 0 var(--blue);
     }
-}
+  }
 }

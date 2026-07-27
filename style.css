@@ -101,9 +101,9 @@ body {
 }
 .card1:hover, .card1.hover-off {
   text-shadow: none;
-  animation: shadow 1.5s linear infinite;
+  animation: shadows 1.5s linear infinite;
 }
-@keyframes shadow {
+@keyframes shadows {
   0%,
   100% {
     text-shadow:
@@ -112,8 +112,8 @@ body {
   }
   25% {
     text-shadow:
-      -3px 3px 0 var(--teal),
-      -6px 6px 0 var(--pink);
+    -3px 3px 0 var(--teal),
+    -6px 6px 0 var(--pink);
   }
   50% {
     text-shadow:
